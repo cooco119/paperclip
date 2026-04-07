@@ -23,6 +23,7 @@ vi.mock("../services/activity.js", () => ({
 
 vi.mock("../services/index.js", () => ({
   issueService: () => mockIssueService,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
 }));
 
 function createApp() {

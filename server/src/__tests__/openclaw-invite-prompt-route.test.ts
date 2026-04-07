@@ -42,6 +42,7 @@ vi.mock("../services/index.js", () => ({
   boardAuthService: () => mockBoardAuthService,
   deduplicateAgentName: vi.fn(),
   logActivity: mockLogActivity,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
   notifyHireApproved: vi.fn(),
 }));
 

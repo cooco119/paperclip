@@ -73,6 +73,7 @@ vi.mock("../services/index.js", () => ({
     syncRunStatusForIssue: vi.fn(async () => undefined),
   }),
   workProductService: () => ({}),
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
 }));
 
 function createApp() {

@@ -79,6 +79,7 @@ vi.mock("../services/index.js", () => ({
   issueApprovalService: () => mockIssueApprovalService,
   issueService: () => ({}),
   logActivity: mockLogActivity,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
   secretService: () => mockSecretService,
   syncInstructionsBundleConfigFromFilePath: vi.fn((_agent, config) => config),
   workspaceOperationService: () => mockWorkspaceOperationService,

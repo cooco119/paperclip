@@ -300,3 +300,11 @@ export {
   type SetPluginState,
   type ListPluginState,
 } from "./plugin.js";
+
+export {
+  knowledgeTypeSchema,
+  createKnowledgeSchema,
+  updateKnowledgeSchema,
+  type CreateKnowledge,
+  type UpdateKnowledge,
+} from "./knowledge.js";

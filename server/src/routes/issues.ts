@@ -42,6 +42,7 @@ import {
   projectService,
   routineService,
   workProductService,
+  knowledgeService,
 } from "../services/index.js";
 import { logger } from "../middleware/logger.js";
 import { forbidden, HttpError, unauthorized } from "../errors.js";
@@ -81,6 +82,7 @@ export function issueRoutes(
   const issueApprovalsSvc = issueApprovalService(db);
   const executionWorkspacesSvc = executionWorkspaceService(db);
   const workProductsSvc = workProductService(db);
+  const knowledgeSvc = knowledgeService(db);
   const documentsSvc = documentService(db);
   const routinesSvc = routineService(db);
   const feedbackExportService = opts?.feedbackExportService;
@@ -485,7 +487,7 @@ export function issueRoutes(
         ? req.query.wakeCommentId.trim()
         : null;
 
-    const [{ project, goal }, ancestors, commentCursor, wakeComment, relations, attachments] =
+    const [{ project, goal }, ancestors, commentCursor, wakeComment, relations, attachments, knowledge] =
       await Promise.all([
       resolveIssueProjectAndGoal(issue),
       svc.getAncestors(issue.id),
@@ -493,6 +495,7 @@ export function issueRoutes(
       wakeCommentId ? svc.getComment(wakeCommentId) : null,
       svc.getRelationSummaries(issue.id),
       svc.listAttachments(issue.id),
+      knowledgeSvc.getForHeartbeat(issue.companyId),
     ]);
 
     res.json({
@@ -549,6 +552,7 @@ export function issueRoutes(
         contentPath: withContentPath(a).contentPath,
         createdAt: a.createdAt,
       })),
+      knowledge,
     });
   });
 

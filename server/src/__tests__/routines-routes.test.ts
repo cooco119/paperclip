@@ -102,6 +102,7 @@ vi.mock("../telemetry.js", () => ({
 vi.mock("../services/index.js", () => ({
   accessService: () => mockAccessService,
   logActivity: mockLogActivity,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
   routineService: () => mockRoutineService,
 }));
 
