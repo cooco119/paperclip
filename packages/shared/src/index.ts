@@ -606,6 +606,18 @@ export {
   type UpdateKnowledge,
 } from "./validators/index.js";
 
+export {
+  skillRequestStatusSchema,
+  createSkillRequestSchema,
+  resolveSkillRequestSchema,
+  createSkillPolicySchema,
+  updateSkillPolicySchema,
+  type CreateSkillRequest,
+  type ResolveSkillRequest,
+  type CreateSkillPolicy,
+  type UpdateSkillPolicy,
+} from "./validators/index.js";
+
 export { API_PREFIX, API } from "./api.js";
 export { normalizeAgentUrlKey, deriveAgentUrlKey, isUuidLike } from "./agent-url-key.js";
 export { deriveProjectUrlKey, normalizeProjectUrlKey, hasNonAsciiContent } from "./project-url-key.js";
