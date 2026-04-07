@@ -33,6 +33,7 @@ import { adapterRoutes } from "./routes/adapters.js";
 import { pluginUiStaticRoutes } from "./routes/plugin-ui-static.js";
 import { knowledgeRoutes } from "./routes/knowledge.js";
 import { skillRequestRoutes } from "./routes/skill-requests.js";
+import { delegationRoutes } from "./routes/delegation.js";
 import { applyUiBranding } from "./ui-branding.js";
 import { logger } from "./middleware/logger.js";
 import { DEFAULT_LOCAL_PLUGIN_DIR, pluginLoader } from "./services/plugin-loader.js";
@@ -171,6 +172,7 @@ export async function createApp(
   api.use(instanceSettingsRoutes(db));
   api.use(knowledgeRoutes(db));
   api.use(skillRequestRoutes(db));
+  api.use(delegationRoutes(db));
   const hostServicesDisposers = new Map<string, () => void>();
   const workerManager = createPluginWorkerManager();
   const pluginRegistry = pluginRegistryService(db);
