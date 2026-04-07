@@ -308,3 +308,15 @@ export {
   type CreateKnowledge,
   type UpdateKnowledge,
 } from "./knowledge.js";
+
+export {
+  skillRequestStatusSchema,
+  createSkillRequestSchema,
+  resolveSkillRequestSchema,
+  createSkillPolicySchema,
+  updateSkillPolicySchema,
+  type CreateSkillRequest,
+  type ResolveSkillRequest,
+  type CreateSkillPolicy,
+  type UpdateSkillPolicy,
+} from "./skill-request.js";
