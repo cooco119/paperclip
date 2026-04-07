@@ -62,3 +62,5 @@ export { pluginLogs } from "./plugin_logs.js";
 export { knowledgeItems } from "./knowledge_items.js";
 export { skillRequests } from "./skill_requests.js";
 export { skillPolicies } from "./skill_policies.js";
+export { delegationAgreements } from "./delegation_agreements.js";
+export { delegationPokerSessions, delegationPokerVotes } from "./delegation_poker_sessions.js";

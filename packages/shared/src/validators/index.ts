@@ -310,6 +310,22 @@ export {
 } from "./knowledge.js";
 
 export {
+  delegationLevelSchema,
+  delegationScopeSchema,
+  delegationSessionStatusSchema,
+  createDelegationAgreementSchema,
+  updateDelegationAgreementSchema,
+  createDelegationSessionSchema,
+  resolveDelegationSessionSchema,
+  castDelegationVoteSchema,
+  type CreateDelegationAgreement,
+  type UpdateDelegationAgreement,
+  type CreateDelegationSession,
+  type ResolveDelegationSession,
+  type CastDelegationVote,
+} from "./delegation.js";
+
+export {
   skillRequestStatusSchema,
   createSkillRequestSchema,
   resolveSkillRequestSchema,

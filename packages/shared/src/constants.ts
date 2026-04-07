@@ -201,7 +201,33 @@ export const PROJECT_COLORS = [
   "#3b82f6", // blue
 ] as const;
 
-export const APPROVAL_TYPES = ["hire_agent", "approve_ceo_strategy", "budget_override_required"] as const;
+export const DELEGATION_LEVELS = [1, 2, 3, 4, 5] as const;
+export type DelegationLevel = (typeof DELEGATION_LEVELS)[number];
+
+export const DELEGATION_LEVEL_LABELS: Record<DelegationLevel, string> = {
+  1: "Tell",
+  2: "Sell",
+  3: "Consult",
+  4: "Agree",
+  5: "Delegate",
+};
+
+export const DELEGATION_SCOPES = [
+  "all",
+  "hiring",
+  "budget",
+  "architecture",
+  "deployment",
+  "security",
+  "code_review",
+  "task_assignment",
+] as const;
+export type DelegationScope = (typeof DELEGATION_SCOPES)[number] | (string & {});
+
+export const DELEGATION_SESSION_STATUSES = ["open", "resolved", "cancelled"] as const;
+export type DelegationSessionStatus = (typeof DELEGATION_SESSION_STATUSES)[number];
+
+export const APPROVAL_TYPES = ["hire_agent", "approve_ceo_strategy", "budget_override_required", "delegation_change"] as const;
 export type ApprovalType = (typeof APPROVAL_TYPES)[number];
 
 export const APPROVAL_STATUSES = [

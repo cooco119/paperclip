@@ -28,6 +28,13 @@ export {
   ROUTINE_RUN_SOURCES,
   PAUSE_REASONS,
   PROJECT_COLORS,
+  DELEGATION_LEVELS,
+  DELEGATION_LEVEL_LABELS,
+  DELEGATION_SCOPES,
+  DELEGATION_SESSION_STATUSES,
+  type DelegationLevel,
+  type DelegationScope,
+  type DelegationSessionStatus,
   APPROVAL_TYPES,
   APPROVAL_STATUSES,
   SECRET_PROVIDERS,
@@ -616,6 +623,22 @@ export {
   type ResolveSkillRequest,
   type CreateSkillPolicy,
   type UpdateSkillPolicy,
+} from "./validators/index.js";
+
+export {
+  delegationLevelSchema,
+  delegationScopeSchema,
+  delegationSessionStatusSchema,
+  createDelegationAgreementSchema,
+  updateDelegationAgreementSchema,
+  createDelegationSessionSchema,
+  resolveDelegationSessionSchema,
+  castDelegationVoteSchema,
+  type CreateDelegationAgreement,
+  type UpdateDelegationAgreement,
+  type CreateDelegationSession,
+  type ResolveDelegationSession,
+  type CastDelegationVote,
 } from "./validators/index.js";
 
 export { API_PREFIX, API } from "./api.js";
