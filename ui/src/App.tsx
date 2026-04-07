@@ -38,6 +38,8 @@ import { AdapterManager } from "./pages/AdapterManager";
 import { PluginPage } from "./pages/PluginPage";
 import { RunTranscriptUxLab } from "./pages/RunTranscriptUxLab";
 import { OrgChart } from "./pages/OrgChart";
+import { Delegations } from "./pages/Delegations";
+import { DelegationSessionDetail } from "./pages/DelegationSessionDetail";
 import { NewAgent } from "./pages/NewAgent";
 import { AuthPage } from "./pages/Auth";
 import { BoardClaimPage } from "./pages/BoardClaim";
@@ -162,6 +164,10 @@ function boardRoutes() {
       <Route path="execution-workspaces/:workspaceId" element={<ExecutionWorkspaceDetail />} />
       <Route path="goals" element={<Goals />} />
       <Route path="goals/:goalId" element={<GoalDetail />} />
+      <Route path="delegation" element={<Navigate to="/delegation/board" replace />} />
+      <Route path="delegation/board" element={<Delegations />} />
+      <Route path="delegation/sessions" element={<Delegations />} />
+      <Route path="delegation/sessions/:sessionId" element={<DelegationSessionDetail />} />
       <Route path="approvals" element={<Navigate to="/approvals/pending" replace />} />
       <Route path="approvals/pending" element={<Approvals />} />
       <Route path="approvals/all" element={<Approvals />} />

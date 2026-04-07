@@ -147,4 +147,14 @@ export const queryKeys = {
   adapters: {
     all: ["adapters"] as const,
   },
+  delegation: {
+    agreements: (companyId: string, agentId?: string) =>
+      ["delegation", "agreements", companyId, agentId] as const,
+    agreementDetail: (id: string) => ["delegation", "agreements", "detail", id] as const,
+    sessions: (companyId: string, status?: string) =>
+      ["delegation", "sessions", companyId, status] as const,
+    sessionDetail: (id: string) => ["delegation", "sessions", "detail", id] as const,
+    votes: (sessionId: string) => ["delegation", "votes", sessionId] as const,
+    voteSummary: (sessionId: string) => ["delegation", "vote-summary", sessionId] as const,
+  },
 };
