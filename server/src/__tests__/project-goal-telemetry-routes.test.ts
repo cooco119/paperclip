@@ -45,6 +45,7 @@ vi.mock("../telemetry.js", () => ({
 vi.mock("../services/index.js", () => ({
   goalService: () => mockGoalService,
   logActivity: mockLogActivity,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
   projectService: () => mockProjectService,
   workspaceOperationService: () => mockWorkspaceOperationService,
 }));

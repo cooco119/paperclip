@@ -16,6 +16,7 @@ const mockLogActivity = vi.hoisted(() => vi.fn());
 vi.mock("../services/index.js", () => ({
   instanceSettingsService: () => mockInstanceSettingsService,
   logActivity: mockLogActivity,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
 }));
 
 function createApp(actor: any) {

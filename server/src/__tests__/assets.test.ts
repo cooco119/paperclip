@@ -17,6 +17,7 @@ vi.mock("../services/index.js", () => ({
     getById: getAssetByIdMock,
   })),
   logActivity: logActivityMock,
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
 }));
 
 function createAsset() {

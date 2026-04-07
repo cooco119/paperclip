@@ -60,6 +60,7 @@ vi.mock("../services/index.js", () => ({
   issueApprovalService: () => ({}),
   issueService: () => mockIssueService,
   logActivity: vi.fn(async () => undefined),
+  knowledgeService: () => ({ getForHeartbeat: vi.fn(async () => []) }),
   projectService: () => mockProjectService,
   routineService: () => ({
     syncRunStatusForIssue: vi.fn(async () => undefined),
